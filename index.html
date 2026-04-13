@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Создание сайта - Индивидуальный проект</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+    <style>
+        /* Анимации для всего сайта */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 5px #4cc9f0; }
+            100% { box-shadow: 0 0 20px #4cc9f0; }
+        }
+        @keyframes moveBg {
+            0% { transform: translate(0,0); }
+            100% { transform: translate(-30px,-30px); }
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px #4cc9f0; }
+            50% { box-shadow: 0 0 40px #4cc9f0; }
+            100% { box-shadow: 0 0 10px #4cc9f0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== ТИТУЛЬНЫЙ ЭКРАН ==================== -->
+    <section id="title-page" class="title-page">
+        <div class="title-container">
+            <h1>🌐 Создание веб-сайта</h1>
+            <p class="subtitle">Индивидуальный проект по информатике</p>
+            
+            <div class="project-info">
+                <div class="author-card">
+                    <div class="card-icon">👨‍💻</div>
+                    <h3>Автор проекта:</h3>
+                    <p>Косивцов Фёдор Викторович</p>
+                    <p>9Б класс</p>
+                </div>
+                <div class="supervisor-card">
+                    <div class="card-icon">👩‍🏫</div>
+                    <h3>Куратор проекта:</h3>
+                    <p>Курдя Светлана Евгеньевна</p>
+                </div>
+            </div>
+
+            <div class="project-description">
+                <p>🎯 Этот сайт — одновременно <strong>проект</strong> и <strong>понятная инструкция</strong> по его созданию.</p>
+                <p>📖 Здесь ты не просто читаешь теорию — ты проходишь <strong>10 шагов с проверочными тестами</strong>, экспериментируешь в <strong>живой песочнице</strong> и видишь, как работает код.</p>
+                <p>⚡ После изучения ты сможешь сам создавать сайты с нуля!</p>
+            </div>
+
+            <button class="start-btn" onclick="startProject()">🚀 Начать изучение →</button>
+        </div>
+    </section>
+
+    <!-- ==================== ОСНОВНОЙ КОНТЕНТ ==================== -->
+    <div id="main-content" class="main-content hidden">
+        
+        <!-- Шапка -->
+        <header>
+            <h1>📖 Как создавался этот сайт</h1>
+            <p>Простое и понятное руководство для начинающих веб-разработчиков</p>
+        </header>
+
+        <!-- Прогресс-бар (показывает сколько шагов пройдено) -->
+        <div class="progress-container">
+            <div class="progress-info">
+                <span>📊 Твой прогресс</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar-wrapper">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+            <p class="progress-hint">✅ Проходи тесты после каждого шага — прогресс будет расти!</p>
+        </div>
+
+        <!-- Навигация (быстрый переход по шагам) -->
+        <nav>
+            <a href="#step1">1. Выбор редактора</a>
+            <a href="#step2">2. Установка VS Code</a>
+            <a href="#step3">3. Структура проекта</a>
+            <a href="#step4">4. HTML — скелет</a>
+            <a href="#step5">5. CSS — стили</a>
+            <a href="#step6">6. JavaScript</a>
+            <a href="#step7">7. Адаптивность</a>
+            <a href="#step8">8. Тестирование</a>
+            <a href="#step9">9. Оптимизация</a>
+            <a href="#step10">10. GitHub Pages</a>
+            <a href="#playground">🎮 Песочница</a>
+        </nav>
+
+        <main>
+            <!-- ==================== ШАГ 1 ==================== -->
+            <section id="step1" class="code-example">
+                <h2>📌 Шаг 1: Выбор редактора кода</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Зачем нужен редактор кода?</strong></p>
+                    <p>Редактор — это программа, в которой ты пишешь код. Можно использовать обычный <strong>Блокнот</strong>, но в нём нет важных функций:</p>
+                    <ul>
+                        <li><strong>Подсветка синтаксиса</strong> — теги, атрибуты и значения раскрашиваются в разные цвета. Глаза не устают, ошибки видно сразу.</li>
+                        <li><strong>Автодополнение</strong> — начинаешь писать <code>&lt;div</code>, а редактор сам подсказывает и закрывает тег.</li>
+                        <li><strong>Подсказки</strong> — наводишь на свойство CSS — показывает, что оно делает.</li>
+                        <li><strong>Расширения</strong> — можно добавить Live Server, проверку ошибок, красивую тему.</li>
+                    </ul>
+                    <p>💡 Хороший редактор ускоряет работу в <strong>3-5 раз</strong> и избавляет от глупых ошибок.</p>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="editor-card">
+                        <h3>⭐ Visual Studio Code</h3>
+                        <p><strong>Плюсы:</strong> бесплатно, тысячи расширений, встроенный терминал, Live Server, Git, подсветка всего подряд, русский интерфейс.</p>
+                        <p><strong>Минусы:</strong> требует 4-8 ГБ ОЗУ, запускается 2-3 секунды.</p>
+                        <a href="https://code.visualstudio.com" target="_blank">🔗 Скачать →</a>
+                    </div>
+                    <div class="editor-card">
+                        <h3>⚡ Sublime Text</h3>
+                        <p><strong>Плюсы:</strong> очень быстрый (мгновенный запуск), лёгкий (меньше 50 МБ), красивая подсветка.</p>
+                        <p><strong>Минусы:</strong> часть функций платная (периодически просит купить лицензию за $99).</p>
+                    </div>
+                    <div class="editor-card">
+                        <h3>🌐 Онлайн-редакторы</h3>
+                        <p><strong>CodePen, Replit, JSFiddle, GitHub Codespaces</strong> — работают прямо в браузере, не нужно ничего устанавливать.</p>
+                        <p><strong>Минусы:</strong> нужен интернет, ограниченный функционал в бесплатной версии.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <p>✅ <strong>Мой совет для начинающего:</strong> Установи <strong>VS Code</strong>. Это стандарт в веб-разработке, по нему больше всего гайдов на YouTube и в текстовых уроках. Если у тебя слабый компьютер — используй <strong>Sublime Text</strong> или онлайн-редактор <strong>Replit</strong>.</p>
+                </div>
+
+                <div class="quiz-block" data-step="1">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Вопрос: Какая функция редактора кода подсвечивает теги разными цветами?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">Автодополнение</button>
+                        <button class="quiz-option" data-correct="true">Подсветка синтаксиса</button>
+                        <button class="quiz-option" data-correct="false">Компиляция</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 2 ==================== -->
+            <section id="step2" class="code-example">
+                <h2>📌 Шаг 2: Установка VS Code и расширений</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Пошаговая инструкция по установке VS Code:</strong></p>
+                    <ol>
+                        <li><strong>Скачай VS Code</strong> с официального сайта: <code>code.visualstudio.com</code> → нажми синюю кнопку "Download for Windows" (или для твоей ОС).</li>
+                        <li><strong>Запусти установщик</strong> — откроется окно установки. Нажимай "Далее" → "Я принимаю условия" → "Установить".</li>
+                        <li><strong>После установки</strong> открой VS Code (иконка появится на рабочем столе или в меню "Пуск").</li>
+                        <li><strong>Установи русский язык</strong> (опционально): нажми <code>Ctrl+Shift+P</code> → введи "Configure Display Language" → выбери "Russian" → перезапусти VS Code.</li>
+                    </ol>
+                </div>
+
+                <div class="explanation">
+                    <p>🔌 <strong>Какие расширения установить (самые важные):</strong></p>
+                    <ul>
+                        <li><strong>Live Server</strong> — создаёт локальный сервер и автоматически обновляет страницу при сохранении файла. <em>Как установить:</em> нажми на иконку "Расширения" (четыре квадратика слева) → введи "Live Server" → нажми "Install".</li>
+                        <li><strong>Prettier</strong> — автоматически форматирует код: расставляет отступы, переносы строк, кавычки. Код становится красивым и единообразным.</li>
+                        <li><strong>Material Icon Theme</strong> — добавляет красивые иконки для файлов и папок.</li>
+                        <li><strong>Russian Language Pack</strong> — переводит интерфейс VS Code на русский.</li>
+                    </ul>
+                </div>
+
+                <pre><code>// Как пользоваться Live Server:
+// 1. Открой папку с проектом (Файл → Открыть папку)
+// 2. Создай файл index.html
+// 3. Нажми правой кнопкой мыши на index.html в списке файлов
+// 4. Выбери "Open with Live Server"
+// 5. Откроется браузер с адресом http://localhost:5500
+// 6. Теперь любое изменение в коде — сайт обновляется сам!</code></pre>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Полезный совет:</strong> В VS Code можно открывать несколько проектов одновременно в разных окнах. Также можно установить тему оформления — зайди в "Расширения", найди "One Dark Pro" или "Dracula Official" — глаза меньше устают.</p>
+                </div>
+
+                <div class="quiz-block" data-step="2">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какое расширение позволяет видеть изменения на сайте без ручного обновления страницы?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">Prettier</button>
+                        <button class="quiz-option" data-correct="true">Live Server</button>
+                        <button class="quiz-option" data-correct="false">GitLens</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 3 ==================== -->
+            <section id="step3" class="code-example">
+                <h2>📌 Шаг 3: Создание структуры проекта</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Зачем нужна структура папок?</strong></p>
+                    <p>Когда проект маленький (один index.html) — можно всё хранить в одной папке. Но когда появляются стили, скрипты, картинки, шрифты — без структуры начинается хаос. Правильная организация помогает:</p>
+                    <ul>
+                        <li>Быстро находить нужный файл</li>
+                        <li>Подключать файлы по понятным путям (например, <code>css/style.css</code>)</li>
+                        <li>Легко передавать проект другому разработчику</li>
+                        <li>Подготавливать проект к публикации на хостинге</li>
+                    </ul>
+                </div>
+
+                <div class="explanation">
+                    <p>📁 <strong>Как создать структуру в VS Code:</strong></p>
+                    <ol>
+                        <li>Открой VS Code</li>
+                        <li>Нажми "Файл" → "Открыть папку" → создай новую папку с названием <code>мой-сайт</code> → выбери её</li>
+                        <li>В левой панели (проводник) нажми на иконку "Новая папка" — создай папку <code>css</code></li>
+                        <li>Создай папку <code>js</code></li>
+                        <li>Создай папку <code>images</code></li>
+                        <li>Нажми на иконку "Новый файл" — создай <code>index.html</code> в корне</li>
+                        <li>В папке <code>css</code> создай файл <code>style.css</code></li>
+                        <li>В папке <code>js</code> создай файл <code>script.js</code></li>
+                    </ol>
+                </div>
+
+                <pre><code>мой-сайт/               # корневая папка проекта
+│
+├── index.html          # главная страница (всегда должен быть)
+│
+├── css/                # папка для стилей
+│   └── style.css       # файл со всеми стилями сайта
+│
+├── js/                 # папка для скриптов
+│   └── script.js       # файл с JavaScript-кодом
+│
+└── images/             # папка для картинок
+    └── (сюда кидай .jpg, .png, .svg, .webp)</code></pre>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Важно:</strong> Имена файлов и папок пиши только <strong>латиницей</strong> (английские буквы) и без пробелов. Вместо пробела используй дефис: <code>my-photo.jpg</code> или нижнее подчёркивание: <code>my_photo.jpg</code>. Это нужно, чтобы сайт корректно работал на любом хостинге.</p>
+                </div>
+
+                <div class="quiz-block" data-step="3">
+                    <h3>📝 Проверь себя</h3>
+                    <p>В какой папке обычно хранятся CSS-файлы?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">js/</button>
+                        <button class="quiz-option" data-correct="true">css/</button>
+                        <button class="quiz-option" data-correct="false">images/</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 4 ==================== -->
+            <section id="step4" class="code-example">
+                <h2>📌 Шаг 4: HTML — скелет сайта</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Что такое HTML?</strong></p>
+                    <p>HTML (HyperText Markup Language) — это язык разметки. Он не программирует, а описывает структуру страницы: где заголовок, где абзац, где картинка, где ссылка. Браузер читает HTML и показывает пользователю красиво оформленную страницу.</p>
+                    <p>🧱 HTML состоит из <strong>тегов</strong>. Тег — это команда для браузера, обычно выглядит так: <code>&lt;название_тега&gt;содержимое&lt;/название_тега&gt;</code>. Например, <code>&lt;h1&gt;Заголовок&lt;/h1&gt;</code>.</p>
+                </div>
+
+                <div class="explanation">
+                    <p>📝 <strong>Базовый шаблон index.html (объяснение каждой строки):</strong></p>
+                    <pre><code>&lt;!DOCTYPE html&gt;      👈 говорим браузеру "это HTML5, не переживай"
+&lt;html lang="ru"&gt;     👈 корневой тег, указываем язык страницы (ru — русский)
+&lt;head&gt;               👈 служебная информация (не видна на странице)
+    &lt;meta charset="UTF-8"&gt;   👈 поддержка русских букв и иероглифов
+    &lt;meta name="viewport" content="width=device-width"&gt;  👈 адаптивность на телефонах
+    &lt;title&gt;Мой первый сайт&lt;/title&gt;  👈 текст на вкладке браузера
+    &lt;link rel="stylesheet" href="css/style.css"&gt;  👈 подключаем CSS
+&lt;/head&gt;
+&lt;body&gt;               👈 всё, что внутри, видит пользователь
+    &lt;h1&gt;Заголовок первого уровня&lt;/h1&gt;  👈 самый главный заголовок (один на странице)
+    &lt;p&gt;Это абзац текста. Здесь можно написать много слов.&lt;/p&gt;
+    &lt;a href="https://example.com"&gt;Это ссылка&lt;/a&gt;  👈 гиперссылка
+    &lt;img src="images/photo.jpg" alt="описание картинки"&gt;  👈 вставка картинки
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;  👈 подключаем JavaScript (обычно в конце body)
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>📚 <strong>Самые важные теги для начинающего:</strong></p>
+                    <ul>
+                        <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> до <code>&lt;h6&gt;...&lt;/h6&gt;</code> — заголовки (h1 — самый важный, h6 — самый мелкий)</li>
+                        <li><code>&lt;p&gt;...&lt;/p&gt;</code> — абзац текста</li>
+                        <li><code>&lt;a href="ссылка"&gt;...&lt;/a&gt;</code> — ссылка</li>
+                        <li><code>&lt;img src="путь" alt="описание"&gt;</code> — картинка</li>
+                        <li><code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> — маркированный список</li>
+                        <li><code>&lt;ol&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ol&gt;</code> — нумерованный список</li>
+                        <li><code>&lt;div&gt;...&lt;/div&gt;</code> — универсальный блок (контейнер)</li>
+                        <li><code>&lt;span&gt;...&lt;/span&gt;</code> — строчный элемент для выделения части текста</li>
+                        <li><code>&lt;button&gt;...&lt;/button&gt;</code> — кнопка</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Совет:</strong> Всегда закрывай теги! Если открыл <code>&lt;div&gt;</code>, обязательно закрой <code>&lt;/div&gt;</code>. Незакрытые теги — частая причина, почему сайт "едет" или выглядит не так, как надо.</p>
+                </div>
+
+                <div class="quiz-block" data-step="4">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какой тег используется для главного заголовка страницы (самого важного)?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">&lt;title&gt;</button>
+                        <button class="quiz-option" data-correct="true">&lt;h1&gt;</button>
+                        <button class="quiz-option" data-correct="false">&lt;header&gt;</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 5 ==================== -->
+            <section id="step5" class="code-example">
+                <h2>📌 Шаг 5: CSS — стилизация и дизайн</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Что такое CSS?</strong></p>
+                    <p>CSS (Cascading Style Sheets) — это язык стилей. Он отвечает за внешний вид: цвета, шрифты, отступы, расположение элементов, анимации. Без CSS сайт выглядит как чёрно-белый документ из 90-х. С CSS — становится красивым и современным.</p>
+                    <p>🧪 <strong>Попробуй прямо сейчас!</strong> Ниже ты можешь покрутить цвет и увидеть, как CSS меняет блок в реальном времени.</p>
+                </div>
+
+                <!-- ЖИВОЙ COLOR PICKER (интерактив) -->
+                <div class="live-demo">
+                    <p>🎨 <strong>Покрути цвет — CSS меняется на глазах:</strong></p>
+                    <div style="display: flex; justify-content: center; gap: 20px; align-items: center; flex-wrap: wrap;">
+                        <input type="color" id="liveColorPicker" value="#4361ee" style="width: 70px; height: 70px; border-radius: 15px; cursor: pointer; border: 2px solid white;">
+                        <div id="colorDemoBlock" class="demo-box" style="background: #4361ee; padding: 20px; border-radius: 15px; transition: 0.2s;">
+                            Этот блок меняет цвет!
+                        </div>
+                    </div>
+                    <pre><code id="generatedCSS" style="margin-top: 15px;">background: #4361ee;</code></pre>
+                    <p>💡 Вот так просто работает CSS! Ты меняешь одно свойство — блок сразу реагирует.</p>
+                </div>
+
+                <div class="explanation">
+                    <p>📝 <strong>Как писать CSS-правила:</strong></p>
+                    <pre><code>/* Синтаксис: селектор { свойство: значение; } */
+body {
+    background-color: #0f172a;    /* цвет фона страницы */
+    color: white;                 /* цвет текста */
+    font-family: Arial, sans-serif; /* шрифт */
+    margin: 0;                    /* убираем отступы по краям */
+    padding: 20px;                /* внутренние отступы */
+}
+
+h1 {
+    font-size: 48px;              /* размер шрифта */
+    text-align: center;           /* выравнивание по центру */
+    color: #4cc9f0;               /* ярко-голубой цвет */
+}
+
+.button {
+    background: linear-gradient(135deg, #4cc9f0, #4361ee); /* градиент */
+    border: none;                 /* убираем рамку */
+    border-radius: 30px;          /* скругление углов */
+    padding: 12px 24px;           /* внутренние отступы (вертикаль горизонталь) */
+    cursor: pointer;              /* курсор-рука при наведении */
+    transition: 0.3s;             /* плавность анимации */
+}
+
+.button:hover {
+    transform: scale(1.05);       /* увеличивается на 5% при наведении */
+    box-shadow: 0 0 20px #4cc9f0; /* свечение */
+}</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>🔗 <strong>Как подключить CSS к HTML:</strong></p>
+                    <p>Внутри тега <code>&lt;head&gt;</code> добавь эту строку:</p>
+                    <pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;</code></pre>
+                    <p><strong>Важно:</strong> путь <code>href="css/style.css"</code> должен указывать на реальное расположение файла. Если style.css лежит в корне — пиши <code>href="style.css"</code>.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Советы по CSS:</strong></p>
+                    <ul>
+                        <li>Используй <strong>инспектор кода</strong> (F12 → вкладка Elements или Styles) — там можно менять CSS на лету и сразу видеть результат.</li>
+                        <li>Для цветов используй <strong>hex-коды</strong> (#ffffff — белый, #000000 — чёрный) или названия цветов (red, blue, green).</li>
+                        <li><strong>Flexbox</strong> — лучший способ выравнивать элементы. Достаточно написать <code>display: flex; justify-content: center; align-items: center;</code> и элемент окажется по центру.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-block" data-step="5">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какое CSS-свойство отвечает за цвет фона элемента?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">color</button>
+                        <button class="quiz-option" data-correct="true">background</button>
+                        <button class="quiz-option" data-correct="false">border</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 6 ==================== -->
+            <section id="step6" class="code-example">
+                <h2>📌 Шаг 6: JavaScript — интерактивность</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Что такое JavaScript?</strong></p>
+                    <p>JavaScript (JS) — это язык программирования, который делает сайт живым. HTML — это скелет, CSS — это одежда, а JavaScript — это мышцы и мозги. С помощью JS можно:</p>
+                    <ul>
+                        <li>Реагировать на клики, наведение мыши, ввод текста</li>
+                        <li>Менять стили и содержимое страницы без перезагрузки</li>
+                        <li>Отправлять данные на сервер (формы, комментарии)</li>
+                        <li>Создавать игры, анимации, калькуляторы, чаты</li>
+                    </ul>
+                </div>
+
+                <div class="explanation">
+                    <p>📝 <strong>Пример простого скрипта (script.js) с пояснениями:</strong></p>
+                    <pre><code>// 1. Находим элемент на странице по тегу h1
+const heading = document.querySelector('h1');
+
+// 2. Добавляем обработчик события "клик"
+heading.addEventListener('click', function() {
+    // 3. Меняем цвет текста на красный, если был не красный, и наоборот
+    if (heading.style.color === 'red') {
+        heading.style.color = 'white';
+    } else {
+        heading.style.color = 'red';
+    }
+});
+
+// 4. Функция, которая показывает всплывающее окно
+function showMessage() {
+    alert('Привет от JavaScript! 🎉');
+}
+
+// 5. Находим все кнопки на странице и добавляем им анимацию при клике
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 200);
+    });
+});</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>🔗 <strong>Как подключить JavaScript к HTML:</strong></p>
+                    <p>Добавь перед закрывающим тегом <code>&lt;/body&gt;</code>:</p>
+                    <pre><code>&lt;script src="js/script.js"&gt;&lt;/script&gt;</code></pre>
+                    <p><strong>Почему в конце body?</strong> Потому что браузер читает HTML сверху вниз. Если скрипт подключить в head, он может не найти элементы на странице (их ещё нет). В конце body — все элементы уже созданы.</p>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Полезные советы по JavaScript:</strong></p>
+                    <ul>
+                        <li>Открывай <strong>консоль браузера</strong> (F12 → вкладка Console). Там видны ошибки и можно писать JS-код вживую для тестов.</li>
+                        <li><code>console.log('текст')</code> — выводит сообщение в консоль. Очень полезно для отладки.</li>
+                        <li>Не бойся ошибок! Это нормально. Консоль подскажет, что пошло не так.</li>
+                        <li>Изучай <strong>события</strong>: click, mouseover, mouseout, keydown, submit — они самые нужные.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-block" data-step="6">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какой язык делает сайт интерактивным (реагирует на клики, ввод текста)?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">HTML</button>
+                        <button class="quiz-option" data-correct="false">CSS</button>
+                        <button class="quiz-option" data-correct="true">JavaScript</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 7 ==================== -->
+            <section id="step7" class="code-example">
+                <h2>📌 Шаг 7: Адаптивный дизайн</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Что такое адаптивность?</strong></p>
+                    <p>Адаптивный дизайн — это когда сайт одинаково хорошо выглядит и на компьютере (широкий экран), и на планшете, и на телефоне (узкий экран). Без адаптивности на телефоне текст будет мелким, а кнопки — крошечными.</p>
+                    <p>📱 Сегодня <strong>более 60% трафика</strong> идёт с телефонов. Если сайт не адаптивен — пользователи уходят.</p>
+                </div>
+
+                <div class="explanation">
+                    <p>📝 <strong>Как сделать адаптивность через CSS-медиа-запросы:</strong></p>
+                    <pre><code>/* Базовые стили для компьютеров (широкие экраны) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+/* Планшеты (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+}
+
+/* Телефоны (ширина экрана до 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 14px;
+    }
+    /* Скрываем меню или делаем его вертикальным */
+    nav {
+        flex-direction: column;
+    }
+}</code></pre>
+                </div>
+
+                <div class="explanation">
+                    <p>📱 <strong>Как проверить адаптивность в браузере:</strong></p>
+                    <ol>
+                        <li>Открой свой сайт</li>
+                        <li>Нажми <strong>F12</strong> (откроются инструменты разработчика)</li>
+                        <li>Нажми на иконку телефона <strong>Toggle device toolbar</strong> (или Ctrl+Shift+M)</li>
+                        <li>Выбери из списка iPhone, Pixel, iPad или введи свои размеры</li>
+                        <li>Смотри, как сайт выглядит на разных экранах</li>
+                    </ol>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Советы по адаптивности:</strong></p>
+                    <ul>
+                        <li>Используй <strong>относительные единицы</strong>: % (проценты), vw (ширина экрана), vh (высота экрана), rem (относительно корневого шрифта). Избегай фиксированных пикселей (px) для ширины.</li>
+                        <li>Картинкам ставь <code>max-width: 100%; height: auto;</code> — тогда они не вылезут за границы экрана.</li>
+                        <li>Для меню на телефоне используй <strong>бургер-меню</strong> (три полоски) — оно экономит место.</li>
+                        <li>Кнопки на телефоне должны быть не меньше <strong>44×44 пикселей</strong> — чтобы удобно нажимать пальцем.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-block" data-step="7">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какое CSS-правило позволяет задавать разные стили для разных размеров экрана?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">@import</button>
+                        <button class="quiz-option" data-correct="true">@media</button>
+                        <button class="quiz-option" data-correct="false">@keyframes</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 8 ==================== -->
+            <section id="step8" class="code-example">
+                <h2>📌 Шаг 8: Тестирование и отладка</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Зачем тестировать сайт?</strong></p>
+                    <p>Даже опытные разработчики делают ошибки: опечатки в коде, неправильные пути к картинкам, забытые теги. Тестирование помогает найти и исправить эти ошибки до того, как сайт увидят пользователи.</p>
+                </div>
+
+                <div class="explanation">
+                    <p>🚀 <strong>Как запустить сайт для тестирования:</strong></p>
+                    <ol>
+                        <li>Открой папку с проектом в VS Code</li>
+                        <li>Найди файл <code>index.html</code> в списке файлов</li>
+                        <li>Нажми на него правой кнопкой мыши</li>
+                        <li>Выбери <strong>"Open with Live Server"</strong> (если расширение установлено)</li>
+                        <li>Откроется браузер с адресом <code>http://localhost:5500</code></li>
+                        <li>Теперь при каждом сохранении файла (Ctrl+S) сайт будет обновляться автоматически</li>
+                    </ol>
+                </div>
+
+                <div class="explanation">
+                    <p>🔍 <strong>Инструменты разработчика (DevTools) — F12:</strong></p>
+                    <ul>
+                        <li><strong>Elements (Элементы)</strong> — смотришь HTML-код страницы в реальном времени, можешь менять текст и стили прямо в браузере (временно).</li>
+                        <li><strong>Console (Консоль)</strong> — здесь видны ошибки JavaScript. Если что-то не работает — сначала загляни сюда.</li>
+                        <li><strong>Network (Сеть)</strong> — показывает, загружаются ли картинки, CSS и JS файлы. Если файл красный — значит, путь неправильный.</li>
+                        <li><strong>Device Toolbar (Режим телефона)</strong> — иконка телефона сверху слева. Проверяй адаптивность.</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Что проверять перед публикацией:</strong></p>
+                    <ul>
+                        <li>✅ Сайт открывается без ошибок в консоли (F12 → Console — пусто)</li>
+                        <li>✅ Все картинки загружаются (нет иконки "битой ссылки")</li>
+                        <li>✅ Все ссылки ведут туда, куда нужно</li>
+                        <li>✅ На телефоне (или в режиме эмуляции) текст читается, кнопки нажимаются</li>
+                        <li>✅ В разных браузерах (Chrome, Firefox, Edge) выглядит одинаково</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-block" data-step="8">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какая клавиша открывает инструменты разработчика (DevTools) в браузере?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">F5</button>
+                        <button class="quiz-option" data-correct="true">F12</button>
+                        <button class="quiz-option" data-correct="false">Ctrl+S</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 9 ==================== -->
+            <section id="step9" class="code-example">
+                <h2>📌 Шаг 9: Оптимизация перед публикацией</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Что такое оптимизация и зачем она нужна?</strong></p>
+                    <p>Оптимизация — это ускорение сайта. Чем быстрее загружается сайт, тем лучше удержание пользователей. Google тоже любит быстрые сайты и ставит их выше в поиске.</p>
+                    <p>⏱️ Идеальное время загрузки — <strong>до 2 секунд</strong>. Если дольше — люди уходят.</p>
+                </div>
+
+                <div class="explanation">
+                    <p>⚡ <strong>Что можно оптимизировать:</strong></p>
+                    <ul>
+                        <li><strong>Изображения</strong> — самые тяжёлые файлы на сайте. Используй сервис <a href="https://tinypng.com" target="_blank">TinyPNG</a> — он сжимает PNG и JPG без потери качества (в 2-3 раза).</li>
+                        <li><strong>Форматы изображений</strong> — используй <strong>WebP</strong> вместо JPG/PNG. Он весит на 30% меньше. Можно конвертировать через <a href="https://cloudconvert.com" target="_blank">CloudConvert</a>.</li>
+                        <li><strong>CSS и JS</strong> — удали лишние пробелы, комментарии, переносы строк. Это называется "минификация". Сервис: <a href="https://minify-js.com" target="_blank">minify-js.com</a>.</li>
+                        <li><strong>Шрифты</strong> — не подключай 5 начертаний одного шрифта. Оставь обычный и жирный.</li>
+                    </ul>
+                </div>
+
+                <div class="explanation">
+                    <p>📊 <strong>Как проверить скорость сайта:</strong></p>
+                    <ul>
+                        <li><strong>Google PageSpeed Insights</strong> — <code>pagespeed.web.dev</code>. Вставь ссылку на сайт, получишь оценку от 0 до 100 и список проблем.</li>
+                        <li><strong>GTmetrix</strong> — подробный отчёт с рекомендациями.</li>
+                        <li><strong>Lighthouse</strong> — встроен в браузер (F12 → вкладка Lighthouse → Generate report).</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Чек-лист перед публикацией:</strong></p>
+                    <ul>
+                        <li>✅ Все картинки сжаты (TinyPNG)</li>
+                        <li>✅ Нет лишних пробелов в коде (Prettier помогает)</li>
+                        <li>✅ Сайт открывается на телефоне (проверь через эмуляцию)</li>
+                        <li>✅ Все ссылки рабочие (нет 404 ошибок)</li>
+                        <li>✅ Консоль браузера чистая (нет красных ошибок)</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-block" data-step="9">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какой сервис помогает сжать изображения без потери качества?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">GitHub</button>
+                        <button class="quiz-option" data-correct="true">TinyPNG</button>
+                        <button class="quiz-option" data-correct="false">VS Code</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ШАГ 10 ==================== -->
+            <section id="step10" class="code-example">
+                <h2>📌 Шаг 10: Публикация на GitHub Pages</h2>
+                
+                <div class="explanation">
+                    <p>🎯 <strong>Что такое GitHub Pages?</strong></p>
+                    <p>GitHub Pages — это бесплатный хостинг от компании GitHub. Туда можно загрузить свой сайт и получить ссылку, по которой сайт увидят все — друзья, учителя, будущие работодатели.</p>
+                    <p>🌍 Твой сайт будет доступен по адресу: <code>username.github.io/название-репозитория</code></p>
+                </div>
+
+                <div class="explanation">
+                    <p>📦 <strong>Пошаговая инструкция (10 минут):</strong></p>
+                    <ol>
+                        <li><strong>Зарегистрируйся на GitHub</strong> — <code>github.com</code>. Придумай логин (username), он будет в ссылке.</li>
+                        <li><strong>Создай новый репозиторий</strong> — нажми зелёную кнопку "New" (или "+" → "New repository"). Назови его, например, <code>my-first-site</code>. Оставь Public. Нажми "Create repository".</li>
+                        <li><strong>Загрузи файлы</strong> — на открывшейся странице нажми "uploading an existing file". Перетащи файлы: <code>index.html</code>, <code>style.css</code>, <code>script.js</code>, папки <code>css/</code>, <code>js/</code>, <code>images/</code>.</li>
+                        <li><strong>Сохрани изменения</strong> — внизу страницы напиши комментарий "первая загрузка" и нажми зелёную кнопку "Commit changes".</li>
+                        <li><strong>Включи GitHub Pages</strong> — зайди в "Settings" (вкладка вверху) → слева выбери "Pages". В разделе "Branch" выбери "main" (или "master") и нажми "Save".</li>
+                        <li><strong>Подожди 2 минуты</strong> — GitHub соберёт сайт. Обнови страницу, появится ссылка: <code>https://username.github.io/my-first-site/</code></li>
+                        <li><strong>Проверь</strong> — перейди по ссылке. Твой сайт в интернете! 🎉</li>
+                    </ol>
+                </div>
+
+                <div class="explanation">
+                    <p>🔧 <strong>Что делать, если сайт не открывается или не видит стили:</strong></p>
+                    <ul>
+                        <li>Проверь, что файл называется именно <strong>index.html</strong> (с маленькой буквы). GitHub ищет именно его.</li>
+                        <li>Проверь пути к файлам в HTML. Если стиль лежит в <code>css/style.css</code>, то в HTML должно быть <code>&lt;link rel="stylesheet" href="css/style.css"&gt;</code> (без первого слеша).</li>
+                        <li>Имена файлов и папок должны быть на латинице и без пробелов.</li>
+                        <li>Подожди ещё 5 минут — иногда GitHub Pages включается не сразу.</li>
+                    </ul>
+                </div>
+
+                <div class="tip-box">
+                    <p>💡 <strong>Альтернативные бесплатные хостинги:</strong></p>
+                    <ul>
+                        <li><strong>Netlify</strong> — просто перетаскиваешь папку с сайтом на сайт — и готово. Очень просто.</li>
+                        <li><strong>Vercel</strong> — удобно для современных проектов.</li>
+                        <li><strong>GitLab Pages</strong> — аналог GitHub Pages.</li>
+                        <li><strong>InfinityFree</strong> — бесплатный хостинг с PHP и базой данных.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-block" data-step="10">
+                    <h3>📝 Проверь себя</h3>
+                    <p>Какой сервис позволяет бесплатно опубликовать статический сайт и получить ссылку вида username.github.io/репозиторий?</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option" data-correct="false">Instagram</button>
+                        <button class="quiz-option" data-correct="true">GitHub Pages</button>
+                        <button class="quiz-option" data-correct="false">YouTube</button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- ==================== ПЕСОЧНИЦА ==================== -->
+            <section id="playground" class="code-example">
+                <h2>🎮 Песочница: Экспериментируй с кодом в реальном времени</h2>
+                <p>Здесь ты можешь менять HTML, CSS и JavaScript и сразу видеть результат. Попробуй изменить цвет фона или текст — и правая панель обновится мгновенно!</p>
+                
+                <div class="live-editor">
+                    <div class="editor-tabs">
+                        <button class="tab-active" data-tab="html">📄 HTML</button>
+                        <button data-tab="css">🎨 CSS</button>
+                        <button data-tab="js">⚡ JavaScript</button>
+                    </div>
+                    
+                    <div class="editor-content">
+                        <div class="code-panel html-panel active">
+                            <textarea class="code-input" id="html-code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Мой эксперимент&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+    &lt;p&gt;Это моя первая веб-страница.&lt;/p&gt;
+    &lt;button onclick="showMessage()"&gt;Нажми меня&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+                        </div>
+                        
+                        <div class="code-panel css-panel">
+                            <textarea class="code-input" id="css-code">body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #ffd43b;
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+button {
+    background: #4cc9f0;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}</textarea>
+                        </div>
+                        
+                        <div class="code-panel js-panel">
+                            <textarea class="code-input" id="js-code">function showMessage() {
+    alert('Ура! JavaScript работает! 🎉');
+    
+    const h1 = document.querySelector('h1');
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    h1.style.color = randomColor;
+}
+
+console.log('Песочница готова! Меняй код и смотри результат.');</textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="editor-controls">
+                        <button id="run-code" class="run-btn">▶ Запустить код</button>
+                        <button id="reset-code" class="reset-btn">🔄 Сбросить</button>
+                        <button id="save-project" class="save-btn">💾 Сохранить в браузер</button>
+                    </div>
+                    
+                    <div class="preview-container">
+                        <h3>📱 Результат (обновляется при клике на "Запустить"):</h3>
+                        <iframe id="preview-frame" class="preview-frame" title="Превью сайта"></iframe>
+                    </div>
+                </div>
+                
+                <div class="tip-box" style="margin-top: 20px;">
+                    <p>💡 <strong>Совет:</strong> Попробуй поменять цвет фона в CSS (background) на другой — и нажми "Запустить код". Также можно добавить новую кнопку в HTML и написать для неё функцию в JavaScript!</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Подвал -->
+        <footer>
+            <p>📌 Индивидуальный проект. Косивцов Фёдор, 9Б класс</p>
+            <p>👩‍🏫 Куратор: Курдя Светлана Евгеньевна</p>
+            <p>📧 Контакты: fedorkosivtsov@yandex.ru</p>
+            <p style="font-size: 0.8rem; margin-top: 20px;">✨ Этот сайт создан как обучающее пособие. Ты можешь использовать его код для своих проектов.</p>
+        </footer>
+
+        <!-- ==================== ЧАТ-ПОДДЕРЖКА ==================== -->
+        <div id="support-chat" class="support-chat">
+            <button class="chat-bubble-button" id="chatButton">
+                <span class="chat-icon">💬</span>
+                <span class="chat-badge" id="chatBadge">1</span>
+            </button>
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-header">
+                    <span>💬 Чат поддержки</span>
+                    <button class="chat-close" id="closeChat">✕</button>
+                </div>
+                <div class="chat-body">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                Привет! Я виртуальный помощник.<br>
+                                Задай вопрос по любому из 10 шагов — я помогу!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Напиши вопрос...">
+                        <button id="sendMessage">➤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scroll-to-top" title="Наверх">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
