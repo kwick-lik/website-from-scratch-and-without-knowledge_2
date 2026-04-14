@@ -455,11 +455,75 @@ footer p { margin: 8px 0; }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .code-example { padding: 20px 25px; margin: 30px 15px; }
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.4rem; }
-    p, li { font-size: 0.9rem; }
-    .demo-box { font-size: 1rem; padding: 15px; }
-    .quiz-options { gap: 8px; }
-    .quiz-option { padding: 5px 12px; font-size: 0.8rem; }
+    body {
+        overflow-x: hidden; /* запрет горизонтальной прокрутки */
+    }
+    .main-content {
+        padding: 10px !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .code-example {
+        padding: 15px !important;
+        margin: 15px !important;
+        max-width: 100%;
+        overflow-x: auto; /* если код вылезает */
+    }
+    nav {
+        flex-direction: column !important;
+        align-items: stretch;
+        position: relative !important; /* убираем sticky, если мешает */
+        top: 0;
+    }
+    nav a {
+        text-align: center;
+        margin: 2px 0;
+    }
+    .quiz-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .quiz-option {
+        width: 100%;
+        text-align: center;
+    }
+    .live-editor .editor-tabs {
+        flex-wrap: wrap;
+    }
+    .editor-tabs button {
+        flex: 1 1 auto;
+        font-size: 12px;
+        padding: 8px;
+    }
+    .code-input {
+        font-size: 12px;
+        height: 150px;
+    }
+    .preview-frame {
+        height: 200px;
+    }
+    .support-chat {
+        bottom: 10px;
+        left: 10px;
+        transform: scale(0.9);
+    }
+    #scroll-to-top {
+        bottom: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    .title-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    .project-info {
+        flex-direction: column;
+    }
+    /* Убедитесь, что нет элементов с fixed/absolute, которые перекрывают скролл */
+    body, html {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto !important;
+    }
 }
