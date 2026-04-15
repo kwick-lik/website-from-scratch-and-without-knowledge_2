@@ -1,4 +1,4 @@
-/* ----- БАЗОВЫЕ СТИЛИ ----- */
+/*БАЗОВЫЕ СТИЛИ*/
 html { font-size: 18px; }
 @media (min-width: 1200px) { html { font-size: 20px; } }
 
@@ -19,12 +19,12 @@ body::before {
     animation: moveBg 10s infinite alternate ease-in-out;
 }
 
-/* ----- ТИПОГРАФИКА ----- */
+/*ТИПОГРАФИКА*/
 h1 { font-size: 2.2rem; text-align: center; font-weight: 800; letter-spacing: 1px; }
 h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
 p, li { font-size: 1rem; line-height: 1.5; }
 
-/* ----- ПРОГРЕСС-БАР ----- */
+/*ПРОГРЕСС-БАР*/
 .progress-container {
     max-width: 900px;
     margin: 20px auto;
@@ -53,7 +53,7 @@ p, li { font-size: 1rem; line-height: 1.5; }
     box-shadow: 0 0 10px #4cc9f0;
 }
 
-/* ----- КАРТОЧКИ РЕДАКТОРОВ ----- */
+/* КАРТОЧКИ РЕДАКТОРОВ*/
 .comparison-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -75,7 +75,7 @@ p, li { font-size: 1rem; line-height: 1.5; }
 .editor-card h3 { margin: 0 0 10px; font-size: 1.3rem; }
 .editor-card a { color: #4cc9f0; text-decoration: none; }
 
-/* ----- КАРТОЧКИ / СЕКЦИИ ----- */
+/*КАРТОЧКИ / СЕКЦИИ */
 .code-example {
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(30px);
@@ -129,7 +129,7 @@ p code, li code {
     color: #ffd43b;
 }
 
-/* ----- КВИЗ ----- */
+/*КВИЗ*/
 .quiz-block {
     background: rgba(0,0,0,0.4);
     border-radius: 15px;
@@ -174,7 +174,7 @@ p code, li code {
     min-height: 40px;
 }
 
-/* ----- ЖИВОЙ COLOR PICKER ----- */
+/*COLOR PICKER*/
 .live-demo {
     background: rgba(0,0,0,0.3);
     border-radius: 15px;
@@ -196,7 +196,7 @@ p code, li code {
     transition: background 0.2s;
 }
 
-/* ----- НАВИГАЦИЯ ----- */
+/*НАВИГАЦИЯ*/
 nav {
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(15px);
@@ -453,7 +453,6 @@ footer p { margin: 8px 0; }
 }
 #scroll-to-top:hover { box-shadow: 0 0 30px #4cc9f0; }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     body {
         overflow-x: hidden; /* запрет горизонтальной прокрутки */
@@ -526,4 +525,59 @@ footer p { margin: 8px 0; }
         min-height: 100vh;
         overflow-y: auto !important;
     }
+}
+/* ===== АДАПТАЦИЯ ТИТУЛЬНОГО ЭКРАНА ДЛЯ ТЕЛЕФОНОВ ===== */
+@media (max-width: 600px) {
+    .title-page {
+        position: relative; /* вместо fixed, чтобы контент мог прокручиваться */
+        display: block;
+        overflow-y: auto;
+        min-height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .title-container {
+        margin: 20px auto;
+        padding: 25px 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+    .title-container h1 {
+        font-size: 1.8rem;
+        word-break: break-word;
+    }
+    .project-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .author-card, .supervisor-card {
+        padding: 12px;
+    }
+    .project-description {
+        font-size: 0.9rem;
+        padding: 0 5px;
+    }
+    .start-btn {
+        display: block;
+        width: 80%;
+        margin: 30px auto 20px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        white-space: normal;
+        word-break: keep-all;
+    }
+    body, html {
+        overflow-x: hidden;
+        overflow-y: auto !important;
+        height: auto;
+    }
+}
+.title-page {
+    overflow-y: auto !important;
+    position: relative !important;
+}
+.start-btn {
+    margin-bottom: 50px !important;
 }
