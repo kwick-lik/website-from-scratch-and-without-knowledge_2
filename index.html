@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
     <style>
-        /* Анимации для всего сайта */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -29,7 +28,6 @@
 </head>
 <body>
 
-    <!-- ==================== ТИТУЛЬНЫЙ ЭКРАН ==================== -->
     <section id="title-page" class="title-page">
         <div class="title-container">
             <h1>🌐 Создание веб-сайта</h1>
@@ -59,16 +57,13 @@
         </div>
     </section>
 
-    <!-- ==================== ОСНОВНОЙ КОНТЕНТ ==================== -->
     <div id="main-content" class="main-content hidden">
         
-        <!-- Шапка -->
         <header>
             <h1>📖 Как создавался этот сайт</h1>
             <p>Простое и понятное руководство для начинающих веб-разработчиков</p>
         </header>
 
-        <!-- Прогресс-бар (показывает сколько шагов пройдено) -->
         <div class="progress-container">
             <div class="progress-info">
                 <span>📊 Твой прогресс</span>
@@ -80,7 +75,6 @@
             <p class="progress-hint">✅ Проходи тесты после каждого шага — прогресс будет расти!</p>
         </div>
 
-        <!-- Навигация (быстрый переход по шагам) -->
         <nav>
             <a href="#step1">1. Выбор редактора</a>
             <a href="#step2">2. Установка VS Code</a>
@@ -96,7 +90,6 @@
         </nav>
 
         <main>
-            <!-- ==================== ШАГ 1 ==================== -->
             <section id="step1" class="code-example">
                 <h2>📌 Шаг 1: Выбор редактора кода</h2>
                 
@@ -147,7 +140,6 @@
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 2 ==================== -->
             <section id="step2" class="code-example">
                 <h2>📌 Шаг 2: Установка VS Code и расширений</h2>
                 
@@ -195,7 +187,6 @@
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 3 ==================== -->
             <section id="step3" class="code-example">
                 <h2>📌 Шаг 3: Создание структуры проекта</h2>
                 
@@ -253,7 +244,6 @@
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 4 ==================== -->
             <section id="step4" class="code-example">
                 <h2>📌 Шаг 4: HTML — скелет сайта</h2>
                 
@@ -314,7 +304,6 @@
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 5 ==================== -->
             <section id="step5" class="code-example">
                 <h2>📌 Шаг 5: CSS — стилизация и дизайн</h2>
                 
@@ -324,7 +313,6 @@
                     <p>🧪 <strong>Попробуй прямо сейчас!</strong> Ниже ты можешь покрутить цвет и увидеть, как CSS меняет блок в реальном времени.</p>
                 </div>
 
-                <!-- ЖИВОЙ COLOR PICKER (интерактив) -->
                 <div class="live-demo">
                     <p>🎨 <strong>Покрути цвет — CSS меняется на глазах:</strong></p>
                     <div style="display: flex; justify-content: center; gap: 20px; align-items: center; flex-wrap: wrap;">
@@ -397,7 +385,6 @@ h1 {
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 6 ==================== -->
             <section id="step6" class="code-example">
                 <h2>📌 Шаг 6: JavaScript — интерактивность</h2>
                 
@@ -472,7 +459,6 @@ document.querySelectorAll('button').forEach(button => {
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 7 ==================== -->
             <section id="step7" class="code-example">
                 <h2>📌 Шаг 7: Адаптивный дизайн</h2>
                 
@@ -556,7 +542,6 @@ h1 {
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 8 ==================== -->
             <section id="step8" class="code-example">
                 <h2>📌 Шаг 8: Тестирование и отладка</h2>
                 
@@ -610,7 +595,6 @@ h1 {
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 9 ==================== -->
             <section id="step9" class="code-example">
                 <h2>📌 Шаг 9: Оптимизация перед публикацией</h2>
                 
@@ -662,7 +646,6 @@ h1 {
                 </div>
             </section>
 
-            <!-- ==================== ШАГ 10 ==================== -->
             <section id="step10" class="code-example">
                 <h2>📌 Шаг 10: Публикация на GitHub Pages</h2>
                 
@@ -717,7 +700,6 @@ h1 {
                 </div>
             </section>
 
-            <!-- ==================== ПЕСОЧНИЦА ==================== -->
             <section id="playground" class="code-example">
                 <h2>🎮 Песочница: Экспериментируй с кодом в реальном времени</h2>
                 <p>Здесь ты можешь менять HTML, CSS и JavaScript и сразу видеть результат. Попробуй изменить цвет фона или текст — и правая панель обновится мгновенно!</p>
@@ -809,7 +791,6 @@ console.log('Песочница готова! Меняй код и смотри 
             </section>
         </main>
 
-        <!-- Подвал -->
         <footer>
             <p>📌 Индивидуальный проект. Косивцов Фёдор, 9Б класс</p>
             <p>👩‍🏫 Куратор: Курдя Светлана Евгеньевна</p>
@@ -817,7 +798,6 @@ console.log('Песочница готова! Меняй код и смотри 
             <p style="font-size: 0.8rem; margin-top: 20px;">✨ Этот сайт создан как обучающее пособие. Ты можешь использовать его код для своих проектов.</p>
         </footer>
 
-        <!-- ==================== ЧАТ-ПОДДЕРЖКА ==================== -->
         <div id="support-chat" class="support-chat">
             <button class="chat-bubble-button" id="chatButton">
                 <span class="chat-icon">💬</span>
@@ -847,9 +827,40 @@ console.log('Песочница готова! Меняй код и смотри 
         </div>
     </div>
 
-    <!-- Кнопка "Наверх" -->
     <button id="scroll-to-top" title="Наверх">↑</button>
 
     <script src="script.js"></script>
+
+<div id="question-builder" style="position: fixed; bottom: 100px; left: 25px; background: rgba(0,0,0,0.9); backdrop-filter: blur(20px); border-radius: 20px; padding: 15px; width: 280px; z-index: 10000; display: none; flex-direction: column; gap: 10px; border: 1px solid rgba(76,201,240,0.5);">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: bold; color: #4cc9f0;">📋 Конструктор вопросов</span>
+        <button id="close-builder" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">✕</button>
+    </div>
+    <select id="question-type">
+        <option value="">Тип вопроса</option>
+        <option value="Что такое">Что такое</option>
+        <option value="Как">Как</option>
+        <option value="Зачем">Зачем</option>
+        <option value="Почему">Почему</option>
+        <option value="Какой">Какой</option>
+    </select>
+    <select id="step-select">
+        <option value="">Шаг</option>
+        <option value="1">Шаг 1: Выбор редактора</option>
+        <option value="2">Шаг 2: Установка VS Code</option>
+        <option value="3">Шаг 3: Структура проекта</option>
+        <option value="4">Шаг 4: HTML</option>
+        <option value="5">Шаг 5: CSS</option>
+        <option value="6">Шаг 6: JavaScript</option>
+        <option value="7">Шаг 7: Адаптивность</option>
+        <option value="8">Шаг 8: Тестирование</option>
+        <option value="9">Шаг 9: Оптимизация</option>
+        <option value="10">Шаг 10: GitHub Pages</option>
+    </select>
+    <select id="subheading-select" disabled>
+        <option value="">Сначала выбери шаг</option>
+    </select>
+    <button id="ask-constructed" style="background: linear-gradient(135deg, #4cc9f0, #4361ee); border: none; border-radius: 30px; padding: 8px; color: white; cursor: pointer;">➤ Задать вопрос</button>
+</div>
 </body>
 </html>

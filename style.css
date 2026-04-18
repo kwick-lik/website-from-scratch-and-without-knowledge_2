@@ -1,4 +1,4 @@
-/*БАЗОВЫЕ СТИЛИ*/
+
 html { font-size: 18px; }
 @media (min-width: 1200px) { html { font-size: 20px; } }
 
@@ -19,12 +19,11 @@ body::before {
     animation: moveBg 10s infinite alternate ease-in-out;
 }
 
-/*ТИПОГРАФИКА*/
+
 h1 { font-size: 2.2rem; text-align: center; font-weight: 800; letter-spacing: 1px; }
 h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; }
 p, li { font-size: 1rem; line-height: 1.5; }
 
-/*ПРОГРЕСС-БАР*/
 .progress-container {
     max-width: 900px;
     margin: 20px auto;
@@ -53,7 +52,7 @@ p, li { font-size: 1rem; line-height: 1.5; }
     box-shadow: 0 0 10px #4cc9f0;
 }
 
-/* КАРТОЧКИ РЕДАКТОРОВ*/
+
 .comparison-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -75,7 +74,7 @@ p, li { font-size: 1rem; line-height: 1.5; }
 .editor-card h3 { margin: 0 0 10px; font-size: 1.3rem; }
 .editor-card a { color: #4cc9f0; text-decoration: none; }
 
-/*КАРТОЧКИ / СЕКЦИИ */
+
 .code-example {
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(30px);
@@ -129,7 +128,7 @@ p code, li code {
     color: #ffd43b;
 }
 
-/*КВИЗ*/
+
 .quiz-block {
     background: rgba(0,0,0,0.4);
     border-radius: 15px;
@@ -174,7 +173,7 @@ p code, li code {
     min-height: 40px;
 }
 
-/*COLOR PICKER*/
+
 .live-demo {
     background: rgba(0,0,0,0.3);
     border-radius: 15px;
@@ -196,7 +195,7 @@ p code, li code {
     transition: background 0.2s;
 }
 
-/*НАВИГАЦИЯ*/
+
 nav {
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(15px);
@@ -225,7 +224,7 @@ nav a:hover, nav a.active {
     box-shadow: 0 0 10px rgba(76,201,240,0.7);
 }
 
-/* ----- КНОПКИ ----- */
+
 .start-btn, .run-btn, .reset-btn, .save-btn, .chat-bubble-button, #scroll-to-top {
     background: linear-gradient(135deg, #4cc9f0, #4361ee);
     color: white;
@@ -251,7 +250,7 @@ nav a:hover, nav a.active {
 }
 .start-btn { font-size: 1rem; padding: 10px 25px; text-transform: uppercase; }
 
-/* ----- ДЕМО-БЛОКИ ----- */
+
 .demo-box {
     background: rgba(255,255,255,0.08);
     border: 2px dashed #4cc9f0;
@@ -269,7 +268,7 @@ nav a:hover, nav a.active {
     box-shadow: 0 0 30px #4cc9f0;
 }
 
-/* ----- ПЕСОЧНИЦА ----- */
+
 .live-editor {
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(25px);
@@ -327,82 +326,234 @@ nav a:hover, nav a.active {
     border-radius: 12px;
 }
 
-/* ----- ЧАТ ----- */
+
 .support-chat {
     position: fixed;
     bottom: 25px;
     left: 25px;
     z-index: 9999;
 }
+
+
 .chat-bubble-button {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    font-size: 20px;
-    box-shadow: 0 0 20px rgba(76,201,240,0.7);
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+    box-shadow: 0 4px 15px rgba(76, 201, 240, 0.5);
+    transition: all 0.3s ease;
+    animation: pulseGlow 2s infinite;
 }
+.chat-bubble-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #4cc9f0;
+}
+.chat-icon {
+    font-size: 28px;
+}
+.chat-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
 .chat-window {
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     left: 0;
-    width: 280px;
-    background: rgba(255,255,255,0.1);
+    width: 320px;
+    background: rgba(20, 30, 55, 0.95);
     backdrop-filter: blur(20px);
-    border-radius: 15px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(76, 201, 240, 0.3);
     display: none;
     flex-direction: column;
     overflow: hidden;
+    transition: all 0.3s ease;
+    transform-origin: bottom left;
 }
-.support-chat.active .chat-window { display: flex; }
+.support-chat.active .chat-window {
+    display: flex;
+    animation: fadeInUp 0.2s ease;
+}
+
+
 .chat-header {
     background: linear-gradient(135deg, #4361ee, #3a0ca3);
-    padding: 10px;
+    padding: 14px 16px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
 }
+.chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+.chat-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 .chat-body {
     display: flex;
     flex-direction: column;
-    height: 300px;
+    height: 380px;
 }
 .chat-messages {
     flex: 1;
     overflow-y: auto;
-    padding: 10px;
-    background: rgba(255,255,255,0.05);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.2);
 }
+
 .message {
     display: flex;
-    gap: 8px;
-    margin-bottom: 10px;
+    gap: 10px;
+    align-items: flex-start;
+    animation: fadeInUp 0.2s ease;
+}
+.message-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.message.user .message-avatar {
+    background: #2c3e66;
 }
 .message-content {
-    background: rgba(255,255,255,0.2);
-    padding: 8px 12px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    padding: 10px 14px;
+    border-radius: 18px;
+    border-top-left-radius: 4px;
     color: white;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
+.message.user .message-content {
+    background: linear-gradient(135deg, #4361ee, #3a0ca3);
+    border-radius: 18px;
+    border-top-right-radius: 4px;
+    margin-left: auto;
+}
+.message.user {
+    flex-direction: row-reverse;
+}
+.message.user .message-avatar {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .chat-input-area {
     display: flex;
-    padding: 10px;
-    gap: 5px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    padding: 12px;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 .chat-input-area input {
     flex: 1;
-    padding: 8px;
-    border-radius: 10px;
+    padding: 10px 14px;
+    border-radius: 30px;
     border: none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+.chat-input-area input:focus {
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 0 2px #4cc9f0;
+}
+.chat-input-area input::placeholder {
+    color: rgba(255,255,255,0.6);
 }
 .chat-input-area button {
     width: 40px;
-    border-radius: 10px;
-    background: #4cc9f0;
-    color: white;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4cc9f0, #4361ee);
     border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chat-input-area button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #4cc9f0;
 }
 
-/* ----- ФУТЕР ----- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 600px) {
+    .chat-window {
+        width: 280px;
+        bottom: 70px;
+        left: 0;
+    }
+    .chat-body {
+        height: 340px;
+    }
+    .message-content {
+        max-width: 75%;
+        font-size: 13px;
+    }
+    .chat-bubble-button {
+        width: 50px;
+        height: 50px;
+    }
+    .chat-icon {
+        font-size: 24px;
+    }
+}
+
+
 footer {
     text-align: center;
     padding: 30px 20px;
@@ -412,15 +563,16 @@ footer {
 }
 footer p { margin: 8px 0; }
 
-/* ----- ВСПОМОГАТЕЛЬНЫЕ ----- */
+
 .title-page {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    display: block;
+    overflow-y: auto;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
     background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    z-index: 1000;
 }
 .title-container {
     background: rgba(255,255,255,0.08);
@@ -429,6 +581,9 @@ footer p { margin: 8px 0; }
     padding: 40px 30px;
     text-align: center;
     max-width: 800px;
+    margin: 20px auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 .author-card, .supervisor-card {
     background: rgba(255,255,255,0.08);
@@ -455,7 +610,7 @@ footer p { margin: 8px 0; }
 
 @media (max-width: 768px) {
     body {
-        overflow-x: hidden; /* запрет горизонтальной прокрутки */
+        overflow-x: hidden;
     }
     .main-content {
         padding: 10px !important;
@@ -466,12 +621,12 @@ footer p { margin: 8px 0; }
         padding: 15px !important;
         margin: 15px !important;
         max-width: 100%;
-        overflow-x: auto; /* если код вылезает */
+        overflow-x: auto;
     }
     nav {
         flex-direction: column !important;
         align-items: stretch;
-        position: relative !important; /* убираем sticky, если мешает */
+        position: relative !important;
         top: 0;
     }
     nav a {
@@ -512,24 +667,16 @@ footer p { margin: 8px 0; }
         width: 35px;
         height: 35px;
     }
-    .title-container {
-        margin: 20px;
-        padding: 20px;
-    }
-    .project-info {
-        flex-direction: column;
-    }
-    /* Убедитесь, что нет элементов с fixed/absolute, которые перекрывают скролл */
     body, html {
         height: auto;
         min-height: 100vh;
         overflow-y: auto !important;
     }
 }
-/* ===== АДАПТАЦИЯ ТИТУЛЬНОГО ЭКРАНА ДЛЯ ТЕЛЕФОНОВ ===== */
+
 @media (max-width: 600px) {
     .title-page {
-        position: relative; /* вместо fixed, чтобы контент мог прокручиваться */
+        position: relative;
         display: block;
         overflow-y: auto;
         min-height: 100vh;
@@ -573,11 +720,4 @@ footer p { margin: 8px 0; }
         overflow-y: auto !important;
         height: auto;
     }
-}
-.title-page {
-    overflow-y: auto !important;
-    position: relative !important;
-}
-.start-btn {
-    margin-bottom: 50px !important;
 }
