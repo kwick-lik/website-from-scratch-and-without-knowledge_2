@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // AI функция (OpenRouter)
     async function askAI(question) {
-        const API_KEY = 'YOUR_OPENROUTER_API_KEY'; // Замени на свой ключ
+        const API_KEY = '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'; // Замени на свой ключ
         try {
             const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                 method: "POST",
